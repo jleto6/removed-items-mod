@@ -1,8 +1,13 @@
 package net.jleto.minecraftplus;
 
 import com.mojang.logging.LogUtils;
+import net.jleto.minecraftplus.block.ModBlocks;
+import net.jleto.minecraftplus.item.ModItems;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -20,29 +25,41 @@ import org.slf4j.Logger;
 @Mod(MinecraftPlus.MODID)
 public class MinecraftPlus
 {
-    // Define mod id in a common place for everything to reference
     public static final String MODID = "minecraftplus";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public MinecraftPlus()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        net.jleto.minecraftplus.item.CreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        net.jleto.minecraftplus.block.ModBlocks.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
+
         MinecraftForge.EVENT_BUS.register(this);
+        modEventBus.addListener(this::addCreative);
     }
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
-        // Some common setup code
-        LOGGER.info("HELLO FROM COMMON SETUP");
-        LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
+    private void commonSetup(final FMLCommonSetupEvent event) {
+
+        event.enqueueWork(() -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CYAN_FLOWER.getId(), ModBlocks.POTTED_CYAN_FLOWER);
+                });
+
 
     }
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        //if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+          //  event.accept(Items.RUBY);
+      //  }
+
     }
+
+
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
