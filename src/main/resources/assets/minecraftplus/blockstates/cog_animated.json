@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "minecraftplus:block/cog",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "minecraftplus:block/cog"
+    },
+    "facing=south": {
+      "model": "minecraftplus:block/cog",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "minecraftplus:block/cog",
+      "y": 270
+    }
+  }
+}
