@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "block/ladder",
-        "texture": "block/ladder"
+        "particle": "minecraftplus:block/cog",
+        "texture": "minecraftplus:block/cog"
     },
     "elements": [
         {   "from": [ 0, 0, 15.2 ],

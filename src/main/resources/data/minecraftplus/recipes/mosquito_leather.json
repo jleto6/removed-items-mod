@@ -3,17 +3,17 @@
   "category": "misc",
   "pattern": [
     " # ",
-    "# #",
+    " # ",
     " # "
   ],
   "key": {
     "#": {
-      "item": "minecraft:iron_ingot"
+      "item": "minecraftplus:mosquito"
     }
 
 
   },
   "result": {
-    "item": "minecraftplus:cog"
+    "item": "minecraftplus:mosquito_leather"
   }
 }

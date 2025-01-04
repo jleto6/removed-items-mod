@@ -1,6 +1,7 @@
 {
   "values": [
-    "minecraftplus:ruby_block",
-    "minecraftplus:ruby_ore"
+    "minecraftplus:nether_reactor_core",
+    "minecraftplus:finished_nether_reactor_core",
+    "minecraftplus:initialized_nether_reactor_core"
   ]
 }

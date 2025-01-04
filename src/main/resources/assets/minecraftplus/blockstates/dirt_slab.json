@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "minecraft:block/acacia_slab"
+      "model": "minecraftplus:block/dirt_slab"
     },
     "type=double": {
-      "model": "minecraft:block/acacia_planks"
+      "model": "minecraft:block/dirt"
     },
     "type=top": {
-      "model": "minecraft:block/acacia_slab_top"
+      "model": "minecraftplus:block/dirt_slab_top"
     }
   }
 }

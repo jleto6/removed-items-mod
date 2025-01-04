@@ -2,8 +2,14 @@ package net.jleto.minecraftplus;
 
 import com.mojang.logging.LogUtils;
 import net.jleto.minecraftplus.block.ModBlocks;
+import net.jleto.minecraftplus.entity.ModEntities;
+import net.jleto.minecraftplus.entity.client.HumanRenderer;
 import net.jleto.minecraftplus.item.ModItems;
+import net.jleto.minecraftplus.sound.ModSounds;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
@@ -35,7 +41,9 @@ public class MinecraftPlus
         net.jleto.minecraftplus.item.CreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
-        net.jleto.minecraftplus.block.ModBlocks.register(modEventBus);
+        ModEntities.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModSounds.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -43,6 +51,13 @@ public class MinecraftPlus
         modEventBus.addListener(this::addCreative);
     }
     private void commonSetup(final FMLCommonSetupEvent event) {
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.CYAN_FLOWER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.POTTED_CYAN_FLOWER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.COG.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.COG_ANIMATED.get(), RenderType.cutout());
+
+
 
         event.enqueueWork(() -> {
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CYAN_FLOWER.getId(), ModBlocks.POTTED_CYAN_FLOWER);
@@ -53,12 +68,11 @@ public class MinecraftPlus
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        //if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-          //  event.accept(Items.RUBY);
-      //  }
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.FLESH);
+       }
 
     }
-
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
@@ -71,10 +85,9 @@ public class MinecraftPlus
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents{
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            LOGGER.info("HELLO FROM CLIENT SETUP");
-            LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        public static void onClientSetup(FMLClientSetupEvent event) {
+
+            EntityRenderers.register(ModEntities.HUMAN.get(), HumanRenderer::new);
         }
     }
 }

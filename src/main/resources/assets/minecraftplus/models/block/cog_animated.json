@@ -1,8 +1,8 @@
 {
     "ambientocclusion": false,
     "textures": {
-        "particle": "minecraftplus:block/cog/cog_animated",
-        "texture": "minecraftplus:block/cog/cog_animated"
+        "particle": "minecraftplus:block/cog_animated/cog_animated",
+        "texture": "minecraftplus:block/cog_animated/cog_animated"
     },
     "elements": [
         {   "from": [ 0, 0, 15.2 ],

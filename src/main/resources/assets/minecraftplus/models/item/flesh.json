@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "minecraftplus:item/ruby"
+    "layer0": "minecraftplus:item/flesh"
   }
 }

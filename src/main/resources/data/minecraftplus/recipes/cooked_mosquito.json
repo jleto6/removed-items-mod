@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 0.35,
   "ingredient": {
-    "item": "minecraft:cod"
+    "item": "minecraftplus:mosquito"
   },
-  "result": "minecraft:cooked_cod"
+  "result": "minecraftplus:cooked_mosquito"
 }

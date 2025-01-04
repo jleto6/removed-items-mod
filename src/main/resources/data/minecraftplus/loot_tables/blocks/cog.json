@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraftplus:cyan_flower"
+          "name": "minecraftplus:cog"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "minecraftplus:blocks/cyan_flower"
+  "random_sequence": "minecraftplus:blocks/cog"
 }

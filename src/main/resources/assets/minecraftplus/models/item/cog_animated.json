@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "minecraftplus:block/cog"
+    "layer0": "minecraftplus:block/cog_animated/cog_animated"
   }
 }

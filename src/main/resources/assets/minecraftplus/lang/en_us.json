@@ -1,9 +1,35 @@
 {
-  "item.minecraftplus.ruby": "Ruby",
 
-  "creativetab.minecraftplus": "Removed Items",
+  "creativetab.removed_items": "Removed Items",
+  "creativetab.mosquitos": "Mosquitos",
+
+  "item.minecraftplus.ruby": "Ruby",
+  "item.minecraftplus.human_spawn_egg": "Human Spawn Egg",
+  "item.minecraftplus.flesh": "Flesh",
+
+  "item.minecraftplus.mosquito": "Mosquito",
+  "item.minecraftplus.cooked_mosquito": "Cooked Mosquito",
+  "item.minecraftplus.mosquito_leather": "Mosquito Leather",
+  "item.minecraftplus.blood_drop": "Blood Drop",
+
+
+
+
+
+  "sounds.minecraftplus.classic_hurt": "Classic Hurt Sound",
+
+  "entity.minecraftplus.human": "Human",
 
   "block.minecraftplus.ruby_block": "Block Of Ruby",
   "block.minecraftplus.ruby_ore": "Ruby Ore",
-  "block.minecraftplus.cyan_flower": "Cyan Flower"
+  "block.minecraftplus.cyan_flower": "Cyan Flower",
+  "block.minecraftplus.cog": "Cog",
+  "block.minecraftplus.dirt_slab": "Dirt Slab",
+  "block.minecraftplus.crying_obsidian": "Crying Obsidian",
+  "block.minecraftplus.glowing_obsidian": "Glowing Obsidian",
+  "block.minecraftplus.nether_reactor_core": "Nether Reactor Core",
+  "block.minecraftplus.initialized_nether_reactor_core": "Initialized Nether Reactor Core",
+  "block.minecraftplus.finished_nether_reactor_core": "Finished Nether Reactor Core"
+
+
 }
